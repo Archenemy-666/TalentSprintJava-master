@@ -5,7 +5,7 @@ public class Main {
 		Circle c1 = new Circle("blue" , 12.2);
 		System.out.println(c1.area());
 		System.out.println(c1.perimeter());
-		System.out.println("check");
+		System.out.println("cool");
 	}
 
 }
