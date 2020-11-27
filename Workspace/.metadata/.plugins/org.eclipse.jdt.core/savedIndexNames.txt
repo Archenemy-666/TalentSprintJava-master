@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+D:\TalentSprintJava-master\Workspace\.metadata\.plugins\org.eclipse.jdt.core
+1810134789.index
