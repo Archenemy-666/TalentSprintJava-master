@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Assignment.iml" filepath="$PROJECT_DIR$/Assignment.iml" />
       <module fileurl="file://$PROJECT_DIR$/CabCompany/CabCompany.iml" filepath="$PROJECT_DIR$/CabCompany/CabCompany.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hospital1/Hospital1.iml" filepath="$PROJECT_DIR$/Hospital1/Hospital1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OveridingSortOfMaps1/OveridingSortOfMaps1.iml" filepath="$PROJECT_DIR$/OveridingSortOfMaps1/OveridingSortOfMaps1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UsingIteration1/UsingIteration1.iml" filepath="$PROJECT_DIR$/UsingIteration1/UsingIteration1.iml" />
     </modules>
   </component>
 </project>
