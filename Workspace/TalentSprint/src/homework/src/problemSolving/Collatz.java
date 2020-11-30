@@ -13,6 +13,7 @@ public class Collatz {
         ArrayList<Integer> list1 = collatz(input) ;
         System.out.println(collatz(input));
         System.out.println(powerOfTwo(list1));
+        System.out.println(ifPowerOfTwo1(list1));
 
 
     }
@@ -48,6 +49,18 @@ public class Collatz {
             return true;
         }
         return false ;
+    }
+
+    public static double ifPowerOfTwo1(ArrayList<Integer> listOfCollatz) {
+        double k = 0 ;
+        for(int i : listOfCollatz){
+         if((int)(Math.ceil((Math.log(i) / Math.log(2)))) == (int)(Math.floor(((Math.log(i) / Math.log(2)))))) {
+             double exp = Math.log10(i) / Math.log10(2);
+             k = Math.pow(2,exp);
+         }
+        }
+
+        return k ;
     }
 
 
