@@ -2,11 +2,17 @@ package chess;
 import java.util.*;
 public class KnightPath{
     public static void main(String[] args){
-        int[][] board = new int[8][8] ;
-        int x = 3 ;
-        int y = 3 ;
-        System.out.println(up(board , x , y));
-        System.out.println(down(board , x , y));
+        Scanner scan = new Scanner(System.in);
+        System.out.println("enter size of board : ");
+        int size = scan.nextInt();
+
+        int[][] board = new int[size][size] ;
+
+        System.out.println("enter x and y coordinates ranging from 0 to 7");
+
+        int x = scan.nextInt() ;
+        int y = scan.nextInt();
+        System.out.println(steps(board , x , y));
 
     }
 
@@ -63,7 +69,24 @@ public class KnightPath{
         }
         return count ;
     }
-    public static int[][] 
+    public static int steps(int[][] board , int x , int y){
+        int count = 0 ;
+        int countUp = up(board , x , y);
+        int countDown = down(board , x , y);
+        int countRight = right(board , x , y);
+        int countLeft = left(board , x , y);
+
+        count = countUp+countDown+countLeft+countRight ;
+        board[x][y] = count ;
+        for(int i = 0 ; i < board.length ; i++){
+            for(int j = 0 ; j< board.length ; j++){
+                System.out.print(board[i][j]);
+            }
+            System.out.println();
+        }
+
+        return count;
+    }
 
 
 
