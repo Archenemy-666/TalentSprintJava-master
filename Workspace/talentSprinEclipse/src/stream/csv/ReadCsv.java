@@ -11,34 +11,23 @@ public class ReadCsv {
 		FileReader input = new FileReader ("D:\\TalentSprintJava-master\\Workspace\\talentSprinEclipse\\csvfiles\\EmployeeDetails.csv");
 		BufferedReader reader = new BufferedReader(input);
 		
-		//FileWriter w = new FileWriter("copyEmployee_details.csv");
+		FileWriter w = new FileWriter("copyEmployee_details.csv");
 		String line = reader.readLine();
 		line = reader.readLine();
 		List<Employee> employeeDatabase = new LinkedList<Employee>();  
 		
 		while (line != null) {
 			line = line.concat("\n");
-			//w.write(line);
-			//System.out.println(line);
-			Employee e = createEmp(line);
-			employeeDatabase.add(e);
+			w.write(line);
+			System.out.println(line);
+
 			line = reader.readLine();
 		}
 		input.close();
 		reader.close();
-		//w.close();
-		for(Employee e : employeeDatabase) {
-			System.out.println(e);
+		w.close();
+
 		}
 	}
-	public static Employee createEmp(String line) {
-		String [] data = line.split(",");
-		Employee e = new Employee();
-		e.setName(data[0]);
-		e.setDept(data[1]);
-		e.setSalary(Float.parseFloat(data[2]));
-		return e ;
-			
-	}
 
-}
+
