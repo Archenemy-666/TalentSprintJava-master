@@ -55,8 +55,8 @@ public class KnightPath{
         int count = 0 ;
         int newRX1 = x + 2;
         int newRY1 = y + 1;
-        int newRY2 = y - 2;
-        if(newRX1 < size && newRX1 < size){
+        int newRY2 = y - 1;
+        if(newRX1 < size && newRY1 < size){
             count = count + 2 ;
         }
         if(newRX1 < size && newRY2 >= 0 ){
