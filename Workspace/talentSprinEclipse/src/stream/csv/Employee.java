@@ -1,10 +1,13 @@
 package stream.csv;
 
-public class Employee {
+import java.util.Comparator;
+
+public class Employee  {
 	
 	private String name;
 	private String dept ; 
 	private float salary ;
+	private float salaryPerAnnum ;
 	
 	public Employee() {}
 	public Employee(String name, String dept, long salary) {
@@ -31,10 +34,22 @@ public class Employee {
 	public void setSalary(float f) {
 		this.salary = f;
 	}
+	public void setSalaryPerAnnum(float perAnnumSalary) {
+		this.salaryPerAnnum = perAnnumSalary ;
+		
+	}
+	public float getSalaryPerAnnum() {
+		this.salaryPerAnnum = this.salary * 12 ;
+		return this.salaryPerAnnum ;
+	}
+	
 	@Override
 	public String toString() {
-		return "Employee [name=" + name + ", dept=" + dept + ", salary=" + salary + "]";
+		return "Employee [name=" + name + ", dept=" + dept + ", salary=" + salary + ", perAnnumSalary=" + getSalaryPerAnnum()+"]" + "\n";
 	}
+
+
+
 	
 	
 
