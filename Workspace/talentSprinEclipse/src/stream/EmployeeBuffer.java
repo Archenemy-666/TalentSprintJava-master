@@ -37,7 +37,7 @@ public class EmployeeBuffer {
 			e.setAddress(data);
 		
 		
-		System.out.println(e);
+		// this problem System.out.println(e);
 		return e;// [name=arun , dept = null, address = null]
 			//[name=arun , dept = Admin, address = null]
 		
