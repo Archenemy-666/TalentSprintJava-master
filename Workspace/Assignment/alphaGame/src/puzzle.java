@@ -1,7 +1,10 @@
 import java.io.*;
-import java.util.*;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.TreeSet;
+
+import static java.util.Collections.*;
 
 public class puzzle {
     public static void main(String[] args) throws IOException {
@@ -22,7 +25,7 @@ public class puzzle {
            System.out.println();
        }
 
-       check(grid);
+       System.out.println(check(grid));
 
 
     }
@@ -55,18 +58,41 @@ public class puzzle {
 
         return grid ;
     }
-    public static void check (String[][] grid){
-        ArrayList<String> s = new ArrayList<>();
-        for(int i = 0 ; i<5 ; i++){
-            for(int j = 0 ; j< 5 ; j++){
-                s.add(grid[i][j]);
+    public static boolean check (String[][] grid){
+        ArrayList<String> check1 = new ArrayList<>();
+        ArrayList<String> check2 = new ArrayList<>();
+        int count = 0 ;
+        //converting from array to arraylist
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                    check1.add(grid[i][j]);
+                    check2.add(grid[i][j]);
+                    Collections.sort(check2);
             }
         }
-        for(String x : s){
-            System.out.println(s);
+        if(check1.equals(check2)){
+            return true ;
         }
+        return false ;
+
+
+        // trying to store value into a ArrayList
+        /*
+        for(String x : s) {
+            while(count < 1) {
+                {
+                    final1.add(s);
+                    System.out.println(s);
+                    count++;
+                }
+            }
+        }
+        */
 
     }
+
+
+
 }
 
 
