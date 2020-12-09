@@ -18,15 +18,25 @@ public class puzzle {
         // 2.5 if correct move print the and store the arrayList .
 
        String[][] grid  =  storing();
-       for (int i = 0 ; i< 5 ; i++  ){
-           for(int j = 0 ; j < 5 ; j++){
-               System.out.print(grid[i][j]);
-           }
-           System.out.println();
+       int[] coordinates = locate(grid);
+       for(int i = 0 ; i < 2 ; i++){
+           System.out.println(coordinates[i]);
+
        }
 
-       System.out.println(check(grid));
+       // here the first coordinate displays the y coordinate and second one denotes x coordinate
+       System.out.println(grid[2][1]);
+       System.out.println(grid[1][2]);
 
+
+      // checking the contents
+        /*
+        while(!checkIfNotInOrder(grid)){
+
+            // add statements that help in movement of empty place
+            printGrid(grid);
+        }
+        */
 
     }
 
@@ -58,7 +68,11 @@ public class puzzle {
 
         return grid ;
     }
-    public static boolean check (String[][] grid){
+
+
+
+
+    public static boolean checkIfNotInOrder (String[][] grid){
         ArrayList<String> check1 = new ArrayList<>();
         ArrayList<String> check2 = new ArrayList<>();
         int count = 0 ;
@@ -88,6 +102,38 @@ public class puzzle {
             }
         }
         */
+    }
+
+
+
+    public static void printGrid(String [][] grid){
+        for (int i = 0 ; i< 5 ; i++  ){
+            for(int j = 0 ; j < 5 ; j++){
+                System.out.print(grid[i][j]);
+            }
+            System.out.println();
+        }
+    }
+    public static int[] locate(String[][] grid){
+        int[] coordinates = new int[2];
+        for(int i = 0 ; i < 5 ; i++) {
+            for (int j = 0; j < 5; j++) {
+                if(grid[i][j].equals("-")){
+                    coordinates[0] = i ;
+                    coordinates[1] = j ;
+                }
+            }
+        }
+        return coordinates;
+    }
+
+    public static void above(String[][] grid){
+        String temp = null ;
+        for(int i = 0 ; i < 5 ; i++){
+            for(int j = 0 ; j < 5 ; j++){
+                temp = grid[i][j] ;
+            }
+        }
 
     }
 
