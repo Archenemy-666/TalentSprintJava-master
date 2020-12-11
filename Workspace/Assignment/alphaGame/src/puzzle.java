@@ -59,7 +59,8 @@ public class puzzle {
     public static String[][] storing() throws IOException {
         //FileReader read = new FileReader("D:\\TalentSprintJava-master\\Workspace\\Assignment\\alphaGame\\gameInput.txt");
         // TESTER FILE
-        FileReader read = new FileReader("D:\\TalentSprintJava-master\\Workspace\\Assignment\\alphaGame\\correctInputForGame.txt");
+       // FileReader read = new FileReader("D:\\TalentSprintJava-master\\Workspace\\Assignment\\alphaGame\\correctInputForGame.txt");
+        FileReader read = new FileReader("D:\\TalentSprintJava-master\\Workspace\\Assignment\\alphaGame\\correctInput2.txt");
 
         BufferedReader buffer = new BufferedReader(read);
         String line = buffer.readLine();
@@ -91,10 +92,14 @@ public class puzzle {
     public static boolean checkIfNotInOrder (String[][] grid){
         ArrayList<String> check1 = new ArrayList<>();
         ArrayList<String> check2 = new ArrayList<>();
-        String order2 = "ABCDEFGHIJKLMNOPQRSTUVWX-";
+        String[] order2 = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","-"};
         int count = 0 ;
         ArrayList<String> check3 = new ArrayList<>();
-        check3.add(order2);
+        // introducing another condition to win !!
+        for(int i = 0 ; i < order2.length ; i++){
+            check3.add(order2[i]);
+        }
+
         //converting from array to arraylist
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
@@ -103,7 +108,7 @@ public class puzzle {
                     Collections.sort(check2);
             }
         }
-        if(check1.equals(check2)){
+        if(check1.equals(check2) || check1.equals(check3)){
             return true ;
         }
         return false ;
