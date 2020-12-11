@@ -59,8 +59,8 @@ public class puzzle {
     public static String[][] storing() throws IOException {
         //FileReader read = new FileReader("D:\\TalentSprintJava-master\\Workspace\\Assignment\\alphaGame\\gameInput.txt");
         // TESTER FILE
-       // FileReader read = new FileReader("D:\\TalentSprintJava-master\\Workspace\\Assignment\\alphaGame\\correctInputForGame.txt");
-        FileReader read = new FileReader("D:\\TalentSprintJava-master\\Workspace\\Assignment\\alphaGame\\correctInput2.txt");
+        FileReader read = new FileReader("D:\\TalentSprintJava-master\\Workspace\\Assignment\\alphaGame\\correctInputForGame.txt");
+       // FileReader read = new FileReader("D:\\TalentSprintJava-master\\Workspace\\Assignment\\alphaGame\\correctInput2.txt");
 
         BufferedReader buffer = new BufferedReader(read);
         String line = buffer.readLine();
@@ -105,9 +105,11 @@ public class puzzle {
             for (int j = 0; j < 5; j++) {
                     check1.add(grid[i][j]);
                     check2.add(grid[i][j]);
-                    Collections.sort(check2);
+
             }
         }
+        Collections.sort(check2);
+
         if(check1.equals(check2) || check1.equals(check3)){
             return true ;
         }
