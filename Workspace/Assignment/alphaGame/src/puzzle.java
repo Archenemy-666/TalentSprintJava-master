@@ -9,11 +9,6 @@ public class puzzle {
 
         //2. feed the arraylist to function and check
 
-
-
-
-
-
         String[][] grid = storing();
         printGrid(grid);
 
@@ -56,15 +51,15 @@ public class puzzle {
         }
 
         if(checkIfNotInOrder(grid)){
-            System.out.println("You Won Game Over :D ");
+            System.out.println("You Won , Game Over :D ");
         }
     }
 
 
     public static String[][] storing() throws IOException {
-        FileReader read = new FileReader("D:\\TalentSprintJava-master\\Workspace\\Assignment\\alphaGame\\gameInput.txt");
+        //FileReader read = new FileReader("D:\\TalentSprintJava-master\\Workspace\\Assignment\\alphaGame\\gameInput.txt");
         // TESTER FILE
-        //FileReader read = new FileReader("D:\\TalentSprintJava-master\\Workspace\\Assignment\\alphaGame\\correctInputForGame");
+        FileReader read = new FileReader("D:\\TalentSprintJava-master\\Workspace\\Assignment\\alphaGame\\correctInputForGame.txt");
 
         BufferedReader buffer = new BufferedReader(read);
         String line = buffer.readLine();
@@ -96,8 +91,10 @@ public class puzzle {
     public static boolean checkIfNotInOrder (String[][] grid){
         ArrayList<String> check1 = new ArrayList<>();
         ArrayList<String> check2 = new ArrayList<>();
+        String order2 = "ABCDEFGHIJKLMNOPQRSTUVWX-";
         int count = 0 ;
-
+        ArrayList<String> check3 = new ArrayList<>();
+        check3.add(order2);
         //converting from array to arraylist
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
